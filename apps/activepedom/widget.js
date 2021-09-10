@@ -168,14 +168,14 @@
     //draw numbers
     if (active == 1) g.setColor(0x07E0); //green
     else g.setColor(0xFFFF); //white
-    g.setFont("6x8", 2);
+    g.setFont("6x8", 4);
     if (setting('lineOne') == 'Steps') {
       g.drawString(kFormatterSteps(stepsCounted),this.x+1,this.y);  //first line, big number, steps
     }
     if (setting('lineOne') == 'Distance') {
       g.drawString(distance.toFixed(2),this.x+1,this.y);  //first line, big number, distance
     }
-    g.setFont("6x8", 1);
+    g.setFont("6x8", 3);
     g.setColor(0xFFFF); //white
     if (setting('lineTwo') == 'Steps') {
       g.drawString(stepsCounted,this.x+1,this.y+14); //second line, small number, steps
