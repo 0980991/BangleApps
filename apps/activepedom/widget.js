@@ -168,8 +168,8 @@
     g.clearRect(this.x, this.y, this.x+width, this.y+height);
     
     //draw numbers
-    if (active == 1) g.setColor(0, 222, 0); //green
-    else g.setColor(198, 243, 198); //light green
+    if (active == 1) g.setColor(0, 1, 0); //green
+    else g.setColor(0, 0, 0); //light green
     g.setFont("6x8", 3);
     if (setting('lineOne') == 'Steps') {
       //g.drawString(kFormatterSteps(stepsCounted),this.x+1,this.y);  //first line, big number, steps
@@ -184,7 +184,7 @@
       g.drawString(stepsCounted,this.x+1,this.y+14); //second line, small number, steps
     }
     if (setting('lineTwo') == 'Hide') {
-      g.drawString(distance.toFixed(4) + "m",this.x+1,this.y+14); //second line, small number, distance // Removed changed km to m
+      g.drawString(distance.toFixed(4) + "Km",this.x+1,this.y+14); //second line, small number, distance
     }
     /*
     //draw step goal bar
