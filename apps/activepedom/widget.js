@@ -169,8 +169,8 @@
     
     //draw numbers
     if (active == 1) g.setColor(0, 222, 0); //green
-    else g.setColor(0xFFFF); //white
-    g.setFont("6x8", 4);
+    else g.setColor(198, 243, 198); //light green
+    g.setFont("6x8", 3);
     if (setting('lineOne') == 'Steps') {
       //g.drawString(kFormatterSteps(stepsCounted),this.x+1,this.y);  //first line, big number, steps
       g.drawString(stepsCounted,this.x+1,this.y);  //first line, big number, steps // No formatted steps eg. 1000 instead of 1k
@@ -186,7 +186,7 @@
     if (setting('lineTwo') == 'Distance') {
       g.drawString(distance.toFixed(4) + "m",this.x+1,this.y+14); //second line, small number, distance // Removed changed km to m
     }
-    
+    /*
     //draw step goal bar
     stepGoalPercent = (stepsCounted / setting('stepGoal')) * 100;
     stepGoalBarLength = width / 100 * stepGoalPercent;
@@ -197,7 +197,7 @@
     g.fillRect(this.x, this.y+height, this.x+1, this.y+height-1); //draw start of bar
     g.fillRect(this.x+width, this.y+height, this.x+width-1, this.y+height-1); //draw end of bar
     g.fillRect(this.x, this.y+height, this.x+stepGoalBarLength, this.y+height); // draw progress bar
-
+    */
     settings = 0; //reset settings to save memory
   }
 
