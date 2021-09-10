@@ -7,8 +7,8 @@
   var steps = 0; //steps taken
   var stepsCounted = 0; //active steps counted
   var active = 0; //x steps in y seconds achieved
-  var stepGoalPercent = 0; //percentage of step goal
-  var stepGoalBarLength = 0; //length og progress bar   
+  //var stepGoalPercent = 0; //percentage of step goal
+  //var stepGoalBarLength = 0; //length og progress bar   
   var lastUpdate = new Date(); //used to reset counted steps on new day
   var width = 46; //width of widget
 
@@ -180,10 +180,10 @@
     }
     g.setFont("6x8", 2);
     g.setColor(0xFFFF); //white
-    if (setting('lineTwo') == 'Steps') {
+    if (setting('lineTwo') == 'Hide') {
       g.drawString(stepsCounted,this.x+1,this.y+14); //second line, small number, steps
     }
-    if (setting('lineTwo') == 'Distance') {
+    if (setting('lineTwo') == 'Hide') {
       g.drawString(distance.toFixed(4) + "m",this.x+1,this.y+14); //second line, small number, distance // Removed changed km to m
     }
     /*
