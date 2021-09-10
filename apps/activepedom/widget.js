@@ -84,6 +84,7 @@
 
   //format number to make them shorter
   function kFormatterSteps(num) {
+
     if (num <= 999) return num; //smaller 1.000, return 600 as 600
     if (num >= 1000 && num < 10000) { //between 1.000 and 10.000
       num = Math.floor(num/100)*100;
@@ -93,6 +94,7 @@
       num = Math.floor(num/1000)*1000;
       return (num / 1000).toFixed(1).replace(/\.0$/, '') + 'k'; //return 10.600 as 10k
     }
+
   }
 
   //Set Active to 0
@@ -166,22 +168,23 @@
     g.clearRect(this.x, this.y, this.x+width, this.y+height);
     
     //draw numbers
-    if (active == 1) g.setColor(0x07E0); //green
+    if (active == 1) g.setColor(0, 222, 0); //green
     else g.setColor(0xFFFF); //white
     g.setFont("6x8", 4);
     if (setting('lineOne') == 'Steps') {
-      g.drawString(kFormatterSteps(stepsCounted),this.x+1,this.y);  //first line, big number, steps
+      //g.drawString(kFormatterSteps(stepsCounted),this.x+1,this.y);  //first line, big number, steps
+      g.drawString(stepsCounted,this.x+1,this.y);  //first line, big number, steps // No formatted steps eg. 1000 instead of 1k
     }
     if (setting('lineOne') == 'Distance') {
       g.drawString(distance.toFixed(2),this.x+1,this.y);  //first line, big number, distance
     }
-    g.setFont("6x8", 3);
+    g.setFont("6x8", 2);
     g.setColor(0xFFFF); //white
     if (setting('lineTwo') == 'Steps') {
       g.drawString(stepsCounted,this.x+1,this.y+14); //second line, small number, steps
     }
     if (setting('lineTwo') == 'Distance') {
-      g.drawString(distance.toFixed(3) + "km",this.x+1,this.y+14); //second line, small number, distance
+      g.drawString(distance.toFixed(4) + "m",this.x+1,this.y+14); //second line, small number, distance // Removed changed km to m
     }
     
     //draw step goal bar
