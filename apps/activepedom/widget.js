@@ -170,10 +170,10 @@
     else g.setColor("#051"); //dark green
     g.setFont("6x8", 3);
     if (setting('lineOne') == 'Steps') {
-      g.drawString(kFormatterSteps(stepsCounted),this.x+1,this.y);  //first line, big number, steps
+      g.drawString(kFormatterSteps(stepsCounted),this.x+1,this.y, true);  //first line, big number, steps
     }
     if (setting('lineOne') == 'Distance') {
-      g.drawString(distance.toFixed(2),this.x+1,this.y);  //first line, big number, distance
+      g.drawString(distance.toFixed(2),this.x+1,this.y, true);  //first line, big number, distance
     }/*
     g.setFont("6x8", 1);
     g.setColor(0xFFFF); //white
