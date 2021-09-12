@@ -7,8 +7,8 @@
   var steps = 0; //steps taken
   var stepsCounted = 0; //active steps counted
   var active = 0; //x steps in y seconds achieved
-  //var stepGoalPercent = 0; //percentage of step goal
-  //var stepGoalBarLength = 0; //length og progress bar   
+  var stepGoalPercent = 0; //percentage of step goal
+  var stepGoalBarLength = 0; //length og progress bar   
   var lastUpdate = new Date(); //used to reset counted steps on new day
   var width = 46; //width of widget
 
@@ -84,7 +84,6 @@
 
   //format number to make them shorter
   function kFormatterSteps(num) {
-
     if (num <= 999) return num; //smaller 1.000, return 600 as 600
     if (num >= 1000 && num < 10000) { //between 1.000 and 10.000
       num = Math.floor(num/100)*100;
@@ -94,7 +93,6 @@
       num = Math.floor(num/1000)*1000;
       return (num / 1000).toFixed(1).replace(/\.0$/, '') + 'k'; //return 10.600 as 10k
     }
-
   }
 
   //Set Active to 0
@@ -168,25 +166,24 @@
     g.clearRect(this.x, this.y, this.x+width, this.y+height);
     
     //draw numbers
-    if (active == 1) g.setColor("#00e400"); //green
-    else g.setColor("#a9ffa9"); //light green
+    if (active == 1) g.setColor("#0d1"); //green
+    else g.setColor("#051"); //dark green
     g.setFont("6x8", 3);
     if (setting('lineOne') == 'Steps') {
-      //g.drawString(kFormatterSteps(stepsCounted),this.x+1,this.y);  //first line, big number, steps
-      g.drawString(stepsCounted,this.x+1,this.y, true);  //first line, big number, steps // No formatted steps eg. 1000 instead of 1k
+      g.drawString(kFormatterSteps(stepsCounted),this.x+1,this.y);  //first line, big number, steps
     }
     if (setting('lineOne') == 'Distance') {
-      g.drawString(distance.toFixed(2),this.x+1,this.y, true);  //first line, big number, distance
-    }
-    g.setFont("6x8", 2);
+      g.drawString(distance.toFixed(2),this.x+1,this.y);  //first line, big number, distance
+    }/*
+    g.setFont("6x8", 1);
     g.setColor(0xFFFF); //white
-    if (setting('lineTwo') == 'Hide') {
+    if (setting('lineTwo') == 'Steps') {
       g.drawString(stepsCounted,this.x+1,this.y+14); //second line, small number, steps
     }
-    if (setting('lineTwo') == 'Hide') {
-      g.drawString(distance.toFixed(4) + "Km",this.x+1,this.y+14); //second line, small number, distance
+    if (setting('lineTwo') == 'Distance') {
+      g.drawString(distance.toFixed(3) + "km",this.x+1,this.y+14); //second line, small number, distance
     }
-    /*
+    
     //draw step goal bar
     stepGoalPercent = (stepsCounted / setting('stepGoal')) * 100;
     stepGoalBarLength = width / 100 * stepGoalPercent;
