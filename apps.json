@@ -3448,7 +3448,7 @@
   "tags": "",
   "storage": [
     {"name":"nucleartime.app.js","url":"app.js"},
-    {"name":"nucleartime.img","url":"app-icon.js","evaluate":true}
+    {"name":"nucleartime.img","url":"nucleartime-icon.js","evaluate":true}
   ]
 }
 ]
