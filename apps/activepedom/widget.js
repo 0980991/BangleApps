@@ -174,7 +174,7 @@
     }
     if (setting('lineOne') == 'Distance') {
       g.drawString(distance.toFixed(2),this.x+1,this.y, true);  //first line, big number, distance
-    }/*
+    }
     g.setFont("6x8", 1);
     g.setColor(0xFFFF); //white
     if (setting('lineTwo') == 'Steps') {
@@ -194,7 +194,7 @@
     g.fillRect(this.x, this.y+height, this.x+1, this.y+height-1); //draw start of bar
     g.fillRect(this.x+width, this.y+height, this.x+width-1, this.y+height-1); //draw end of bar
     g.fillRect(this.x, this.y+height, this.x+stepGoalBarLength, this.y+height); // draw progress bar
-    */
+  
     settings = 0; //reset settings to save memory
   }
 
